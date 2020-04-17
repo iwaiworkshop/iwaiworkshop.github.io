@@ -70,9 +70,17 @@ header.masthead h1 {
 
 .middlesection ul {
   margin: 0;
-  padding: 0 0 0 40px;
+  padding: 0 0 0 3rem;
 }
 
+.subsection {
+  padding-top: 1rem;
+  padding-left: 3rem;
+}
+
+.subsection p {
+  padding-bottom: 1rem;
+}
 
 .showcase .showcase-text {
   padding: 3rem;
