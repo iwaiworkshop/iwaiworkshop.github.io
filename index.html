@@ -26,12 +26,13 @@
 <body>
 
   <!-- Navigation -->
-  <nav class="navbar navbar-light bg-light static-top">
+  <nav class="navbar navbar-expand navbar-light bg-light static-top">
     <div class="container">
       <a class="navbar-brand" href="index.html">1st International Workshop on Active Inference</a>
-      <ul class="nav navbar-nav navbar-right">
-      	<li><a href="index.html">Home</a></li>
-      	<li><a href="programme.html">Programme</a></li>
+      <ul class="navbar-nav">
+      	<li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+      	<li class="nav-item"><a class="nav-link" href="#call-for-papers">Call for papers</a></li>
+      	<li class="nav-item"><a class="nav-link" href="#programme">Programme</a></li>
       </ul>
     </div>
   </nav>
@@ -58,15 +59,15 @@
   			The goal of the 1st International Workshop on Active Inference is to bring together researchers on active inference as well as related research fields in order to discuss current trends, novel results, (real-world) applications, to what extent active inference can be used in modern machine learning settings, such as deep learning, and how it can be unified with the latest psychological and neurological insights.
   		</p>
   		<p class="mb-0">
-  			Active inference is a theory of behaviour and learning that originated in neuroscience. The basic assumption is that intelligent agents entertain a generative model of their environment, and their main goal is to minimize surprise or, more formally, their free energy. The agents do so either by updating their generative model, so that it becomes better at explaining observations (i.e. learning), or by selecting policies that will resolve their surprise (i.e. acting), for example by moving towards prior, preferred states, or by moving towards less ambiguous states.
+  			Active inference is a theory of behaviour and learning that originated in neuroscience <a href="#ref1">(Friston et al., 2006)</a>. The basic assumption is that intelligent agents entertain a generative model of their environment, and their main goal is to minimize surprise or, more formally, their free energy. The agents do so either by updating their generative model, so that it becomes better at explaining observations (i.e. learning), or by selecting policies that will resolve their surprise (i.e. acting), for example by moving towards prior, preferred states, or by moving towards less ambiguous states <a href="#ref3">(Friston et al., 2017)</a>.
   		</p>
 		<p class="mb-0">
-			In the field of machine learning, the definition of free energy is also known as the (negative) evidence lower bound (ELBO) in variational Bayesian methods. In deep learning, this has become a popular method to build generative models of complex data using the variational autoencoder framework. Also, active inference has connections with the currently popular domain of reinforcement learning and intrinsic motivation.
+			In the field of machine learning, the definition of free energy is also known as the (negative) evidence lower bound (ELBO) in variational Bayesian methods. In deep learning, this has become a popular method to build generative models of complex data using the variational autoencoder framework <a href="#ref4">(Kingma et al., 2014, </a><a href="#ref5">Rezende et al., 2014)</a>. Also, active inference has connections with the currently popular domain of reinforcement learning and intrinsic motivation <a href="#ref3">(Friston et al., 2009)</a>.
 		</p>
   	</div>
   </section>
 
-  <section class="middlesection text-left bg-light">
+  <section class="middlesection text-left bg-light" id="call-for-papers">
   	<div class="container">
   		<h4>Call for papers</h4>
   		<p class="mb-0">
@@ -103,7 +104,7 @@
   	<div class="container">
   		<h5>Paper submissions</h5>
   		<p class="mb-0">
-  			We welcome submissions of papers with up to 6 printed pages (including references) in LNCS format (<a href="https://www.springer.com/gp/computer-science/lncs/conference-proceedings-guidelines">click here for details</a>). Submissions will be evaluated according to their originality and relevance to the workshop, and should an abstract of 60-100 words. Contributions should be in PDF format and submitted via Easychair (link TBA).
+  			We welcome submissions of papers with up to 6 printed pages (including references) in LNCS format (<a href="https://www.springer.com/gp/computer-science/lncs/conference-proceedings-guidelines" target="_blank">click here for details</a>). Submissions will be evaluated according to their originality and relevance to the workshop, and should an abstract of 60-100 words. Contributions should be in PDF format and submitted via Easychair (link TBA).
   		</p>
   		<p class="mb-0">
   			<span class="text-primary">In accordance with the main conference, will apply a <b>double-blind</b> review process</span> (see also the double-blind reviewing process section below for further details). All papers need to be anonymized in the best of efforts. It is allowed to have a (non-anonymous) online pre-print. Reviewers will be asked not to search for them.
@@ -115,7 +116,16 @@
   	<div class="container">
   		<h4>Registration</h4>
   		<p class="mb-0">
-  			The workshop registrations will be handled by ECML/PKDD 2020 (<a href="https://ecmlpkdd2020.net/attending/registration">click here</a>). At least one author of each accepted paper should register for the conference.
+  			The workshop registrations will be handled by ECML/PKDD 2020 (<a href="https://ecmlpkdd2020.net/attending/registration" target="_blank">click here</a>). At least one author of each accepted paper should register for the conference.
+  		</p>
+  	</div>
+  </section>
+
+  <section class="middlesection text-left bg-light" id="programme">
+  	<div class="container">
+  		<h4>Programme</h4>
+  		<p class="mb-0">
+  			The final programme is TBA.
   		</p>
   	</div>
   </section>
@@ -151,6 +161,29 @@
 			Alexander Tschantz (University of Sussex) <br />
 			Maxwell Ramstead (McGill University) <br />
 			Pablo Lanillos (Donders Institute for Brain, Cognition and Behaviour)
+  		</p>
+  	</div>
+  </section>
+
+  <section class="middlesection text-left bg-light">
+  	<div class="container">
+  		<h4>References</h4>
+  		<p class="mb-0" id="ref1">
+  			Karl Friston, James Kilner, Lee Harrison. A free energy principle for the brain. Journal of Physiology-Paris, Volume 100, Issues 1–3, 2006.
+  		</p>
+  		<p class="mb-0" id="ref2">
+			Karl J. Friston, Jean Daunizeau, and Stefan J. Kiebel. Reinforcement Learning or Active Inference? PLoS ONE, 4(7), 2009.
+		</p>
+		<p class="mb-0" id="ref3">
+			Karl J. Friston, Marco Lin, Christopher D. Frith, Giovanni Pezzulo, J. Allan Hobson, and
+			Sasha Ondobaka. Active Inference, Curiosity and Insight. Neural Computation, 29(10):
+			2633–2683, 2017.
+		</p>
+		<p class="mb-0" id="ref4">
+			Diederik P. Kingma and Max Welling. Auto-encoding variational bayes. 2nd International Conference on Learning Representations, 2014.
+		</p>
+		<p class="mb-0" id="ref5">
+			Danilo Jimenez Rezende, Shakir Mohamed, and Daan Wierstra. 2014. Stochastic backpropagation and approximate inference in deep generative models. 31st International Conference on International Conference on Machine Learning, 2014.
   		</p>
   	</div>
   </section>
