@@ -57,11 +57,15 @@ header.masthead h1 {
 }
 
 .topsection p {
-  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .middlesection {
-  padding-top: 1.5rem;
+  padding-top: 1rem;
+}
+
+.middlesection p {
+  padding-bottom: 1rem;
 }
 
 .middlesection ul {
