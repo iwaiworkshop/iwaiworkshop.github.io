@@ -153,7 +153,7 @@ All submitted papers will undergo a rigorous <b>double-blind</b> peer review pro
 		<img src="img/ghent-sint-pietersabdij.jpg" class="img-fluid">
 		</div>
 		<div class="col-4">
-                <div id="map" style="height:400px;width:100%;"></div>
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d20068.132144372586!2d3.7138855072792776!3d51.043549824878376!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6a023c4d7bdac0a8!2sSint-Pietersabdij!5e0!3m2!1sen!2sbe!4v1672927645438!5m2!1sen!2sbe" width="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 		</div>
 	    </div>
         </div>
@@ -247,26 +247,6 @@ All submitted papers will undergo a rigorous <b>double-blind</b> peer review pro
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- add google maps location -->
-  <script>
-	function initMap() {
-	  // The location 
-	  const location = { lat: 51.0421383, lng: 3.7267467 };
-	  // The map, centered at the location
-	  const map = new google.maps.Map(document.getElementById("map"), {
-	    zoom: 14,
-	    center: location,
-	  });
-	  // The marker, positioned at the location
-	  const marker = new google.maps.Marker({
-	    position: location,
-	    map: map,
-	  });
-	}
-
-	window.initMap = initMap;
-  </script>
 </body>
 
 </html>
