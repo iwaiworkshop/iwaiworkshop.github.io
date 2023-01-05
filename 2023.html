@@ -121,7 +121,6 @@
   			We welcome submissions of papers with up to 12 printed pages (excluding references) in LNCS format (<a href="https://www.springer.com/gp/computer-science/lncs/conference-proceedings-guidelines" target="_blank">click here for details</a>). Submissions will be evaluated according to their originality and relevance to the workshop, and should an abstract of 60-100 words. Contributions should be in PDF format and submitted via Easychair (<a href="https://easychair.org/my/conference?conf=iwai2023" target="_blank">click here</a>).
   		</p>
   		<p class="mb-0">
-  			<span class="text-primary">
 All submitted papers will undergo a rigorous <b>double-blind</b> peer review process, and be selected based on originality, quality, soundness, and relevance. Submitted papers need to be anonymized with the best of efforts. It is allowed to have a (non-anonymous) online pre-print. 
   		</p>
   	</div>
@@ -148,12 +147,13 @@ All submitted papers will undergo a rigorous <b>double-blind</b> peer review pro
 	<div class="container">
 	    <div class="row">
 		<div class="col-sm">
-		<img src="https://visit.gent.be/sites/default/files/styles/photo_large/public/images-spot/sint-pietersabdij_tuin_4.jpg"
+		<img src="https://visit.gent.be/sites/default/files/styles/photo_large/public/images-spot/sint-pietersabdij_tuin_4.jpg">
 		</div>
 		<div class="col-sm">
-		<img src="https://historischehuizen.stad.gent/sites/default/files/styles/gallery_full/public/2019-04/Sint-pietersabdij-117-2.jpg"
+		<img src="https://historischehuizen.stad.gent/sites/default/files/styles/gallery_full/public/2019-04/Sint-pietersabdij-117-2.jpg">
 		</div>
-		<div id="map" class="col-sm">
+		<div class="col-sm">
+                <div id="map"></div>
 		</div>
 	    </div>
         </div>
@@ -220,6 +220,18 @@ All submitted papers will undergo a rigorous <b>double-blind</b> peer review pro
   </section>
 
 
+  <section class="middlesection text-left bg-light">
+  	<div class="container">
+  		<h4>Previous editions</h4>
+  		<p class="mb-0">
+  			<a href="2020.html">2020 - Ghent (virtual)</a><br />
+  			<a href="2021.html">2021 - Bilbao (virtual)</a><br />
+  			<a href="2022.html">2022 - Grenoble</a><br />
+  		</p>
+  	</div>
+  </section>
+
+
   <!-- Footer -->
   <footer class="footer bg-light">
     <div class="container">
@@ -241,7 +253,7 @@ All submitted papers will undergo a rigorous <b>double-blind</b> peer review pro
 	function initMap() {
 	  // The location 
 	  const location = { lat: 51.0421383, lng: 3.7267467 };
-	  // The map, centered at Uluru
+	  // The map, centered at the location
 	  const map = new google.maps.Map(document.getElementById("map"), {
 	    zoom: 14,
 	    center: location,
