@@ -47,6 +47,7 @@ header.masthead h1 {
     padding-top: 12rem;
     padding-bottom: 12rem;
   }
+
   header.masthead h1 {
     font-size: 3rem;
   }
@@ -154,4 +155,12 @@ header.masthead h1 {
 footer.footer {
   padding-top: 4rem;
   padding-bottom: 4rem;
+}
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
