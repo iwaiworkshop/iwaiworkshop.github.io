@@ -27,7 +27,7 @@
 		header.masthead {
 			position: relative;
 			background-color: #343a40;
-			background: url("img/ghent-masthead2.jpg") no-repeat center center;
+			background: url("img/oxford-masthead.jpg") no-repeat center center;
 			background-size: cover;
 			padding-top: 5rem;
 			padding-bottom: 5rem;
@@ -40,10 +40,10 @@
 <body>
 
 	<!-- Navigation -->
-	<nav class="navbar navbar-expand navbar-light bg-light static-top">
+	<nav class="navbar navbar-expand-md navbar-light bg-light static-top">
 		<div class="container">
-			<a class="navbar-brand" href="index.html"><img src="img/IWAI_logo_small.png" style="width: 120px;"/></a>
-			<a class="navbar-brand" href="index.html">4th International Workshop on Active Inference</a>
+			<a class="navbar-brand" href="index.html"><img src="img/IWAI_logo_small.png" style="width: 100px;" /></a>
+			<!--<a class="navbar-brand" href="index.html">5th International Workshop on Active Inference</a>-->
 			<ul class="navbar-nav">
 				<li class="nav-item"><a class="nav-link" href="#">Home</a></li>
 				<li class="nav-item"><a class="nav-link" href="#call-for-papers">Call for papers</a></li>
@@ -60,9 +60,9 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xl-9 mx-auto">
-					<h3>IWAI 2023</h3>
-					<h1 class="mb-5">4th International Workshop<br />on Active Inference</h1>
-					<h4>13-15 September 2023 in Ghent, Belgium</h4>
+					<h3>IWAI 2024</h3>
+					<h1 class="mb-5">5th International Workshop<br />on Active Inference</h1>
+					<h4>9-11 September 2024 in Oxford, UK</h4>
 				</div>
 			</div>
 		</div>
@@ -73,7 +73,7 @@
 
 			<!-- <h4>Motivation of the workshop</h4> -->
 			<p class="mb-0">
-				The 4th International Workshop on Active Inference wants to bring together researchers on active
+				The 5th International Workshop on Active Inference wants to bring together researchers on active
 				inference as well as related research fields in order to discuss current trends, novel results and
 				real-world applications. We have an interest in exploring the extent to which active inference can be
 				used in modern machine learning settings, such as in hybrid setups combining it with deep learning, as
@@ -88,54 +88,18 @@
 		<div class="container">
 			<h4>Programme</h4>
 
+			<!--
 			<p class="mb-0">
-	      The workshop will take place September 13-15th. Download the full schedule <a href="docs/IWAI_2023_program_detailed.pdf" target="_blank">here</a>.
-	      </p>
+	      The workshop will take place September 9-11th. Download the full schedule <a href="docs/IWAI_2024_program_detailed.pdf" target="_blank">here</a>.
+	      </p>-->
 
-			<!-- <p class="mb-0">
-				The full workshop programme will be announced later.
-			</p> -->
+			<p class="mb-0">
+				The workshop will take place September 9-11th. The full workshop programme will be announced later.
+			</p>
 
+			<!--
 			<h5>Keynotes</h5>
 			<div class="container">
-				<div class="row">
-					<div class="col-1">
-						<img src="img/ogata.jpg" class="img-fluid" alt="Responsive image">
-					</div>
-					<div class="col-10">
-						<p class="mb-0">
-							<i>Embodied AI with the Concept of Active Inference</i></br>
-							<b>Tetsuya Ogata</b>
-						</p>
-						<p class="mb-0">
-							Tetsuya Ogata is a Professor with the Faculty of Science and Engineering, at Waseda
-							University, and a Joint-appointed Fellow with the Artificial Intelligence Research Center,
-							National Institute of Advanced Industrial Science and Technology, Tokyo. He is currently a
-							member of the director board of the Japan Deep Learning Association (JDLA) since 2017, and a
-							director of the Institute of AI and Robotics, at Waseda University since 2020.
-						</p>
-					</div>
-				</div>
-				<br />
-
-				<div class="row">
-					<div class="col-1">
-						<img src="img/maselli.jpg" class="img-fluid" alt="Responsive image">
-					</div>
-					<div class="col-10">
-						<p class="mb-0">
-							<i>Not only intentional: an Active Inference account of Human Motor Behavior</i></br>
-							<b>Antonella Maselli</b>
-						</p>
-						<p class="mb-0">
-							Antonella Maselli currently works at the Institute of Cognitive Sciences and Technology, at
-							the Italia National Research Council of Italy (CNR). Antonella does research in multisensory
-							perception, cognitive sciences and motor control.
-						</p>
-					</div>
-				</div>
-				<br />
-
 				<div class="row">
 					<div class="col-1">
 						<img src="img/friston.jpg" class="img-fluid" alt="Responsive image">
@@ -154,80 +118,34 @@
 				</div>
 				<br />
 			</div>
+			-->
 
+			<!--
 			<h5>Tutorials</h5>
 			<div class="container">
 				<div class="row">
 					<div class="col-1">
-						<img src="img/sajid.png" class="img-fluid" alt="Responsive image">
+						<img src="img/presenter.png" class="img-fluid" alt="Responsive image">
 					</div>
 					<div class="col-10">
 						<p class="mb-0">
-							<i>Deep active inference</i></br>
-							<b>Noor Sajid</b>
+							<i>Title</i></br>
+							<b>Presenter</b>
 						</p>
 						<p class="mb-0">
-							Active inference is a Bayesian framework for understanding biological intelligence. The underlying theory brings
-							together perception and action under one single imperative: minimizing free energy (Friston, 2010). I will present a
-							neural architecture for building deep active inference agents operating in complex, continuous state-spaces using
-							multiple forms of Monte-Carlo (MC) sampling. For this, I will introduce several techniques, novel to active inference.
-							These include: i) selecting free-energy-optimal policies via MC tree search, ii) approximating this optimal policy
-							distribution via a feed-forward `habitual' network, iii) predicting future parameter belief updates using MC dropouts
-							and, finally, iv) optimizing state transition precision (a high-end form of attention). Our approach enables agents to
-							learn environmental dynamics efficiently, while maintaining task performance. I will illustrate this in a toy
-							environment and demonstrate that these agents can automatically create disentangled representations that are apt for
-							modeling state transitions. In a more complex Animal-AI environment, our agents can simulate future state transitions
-							and actions, to evince reward-directed navigation – despite temporary suspension of visual input. Our results show that
-							deep active inference - equipped with MC methods - provides a flexible framework to develop biologically inspired
-							intelligent agents, with applications in both machine learning and cognitive science.
+							Description
 						</p>
 						<p class="mb-0">
-							Noor Sajid is a theoretical neuroscience PhD candidate at University College London with Prof. Karl Friston. Her
-							research is aimed at understanding the algorithms of the brain – with a particular interest in mechanisms that support
-							biological adaptation. She investigates how artificial and biological agents adapt when interacting with their
-							environments. Noor hopes that this work will provide insight into how neural networks of the brain implement and adapt
-							computations after perturbations. Her work is funded by the UK Medical Research Council’s AI and Neuroscience PhD award,
-							2021 Microsoft PhD Research fellowship and G-Research PhD award.
-						</p>
-					</div>
-				</div>
-				<br />
-			
-				<div class="row">
-					<div class="col-1">
-						<img src="img/meera.png" class="img-fluid" alt="Responsive image">
-					</div>
-					<div class="col-10">
-						<p class="mb-0">
-							<i>Design of Active Inference controllers for dynamic systems</i></br>
-							<b>Ajith Anil Meera</b>
-						</p>
-						<p class="mb-0">
-							Have you ever wondered how the roboticists and control engineers model and control robots? Have
-							you been working with active inference and wanted to put it into robot? In this tutorial, the
-							participants will gain an insight into the modelling and control of dynamic systems using active
-							inference, from a robotics perspective. At the end, the participants will learn to i) model a dynamic
-							system, ii) transform the model to the state space form and, iii) derive the equations for the Active
-							Inference controller. The tutorial will follow a step by step guidance in MATLAB, to control a simple
-							dynamic system (spring mass damper system) towards a desired goal state or goal state velocity,
-							using the Active Inference controller. After this tutorial, the participants will be able to derive the
-							equations of motion of a dynamic system, and design an active inference controller to control it. The
-							same methodology will be followed to demonstrate the simulation results for i) controlling a 2DOF
-							robot arm, ii) control a group of drones to fly in formation towards the goal by avoiding obstacles –
-							all using the active inference controller. This tutorial is not only targeted for beginners, but also for
-							researchers with control knowledge.
-						</p>
-						<p class="mb-0">
-							Ajith Anil Meera is a post-doctoral researcher with Dr. Pablo Lanillos, working on the EU project METATOOL at Radbound
-							University, The Netherlands, where he investigates robotic control and tool invention with Active Inference. He obtained his PhD from the Department of Cognitive Robotics, TU
-							Delft, on the thesis, “Free Energy Principle Based Precision Modulation for Robot Attention”. His
-							research focuses on robot cognition, path planning, estimation and control.
+							Bio
 						</p>
 					</div>
 				</div>
 				<br />
 			</div>
+			-->
 
+
+			<!--
 			<h5>Accepted papers</h5>
 
 			<p class="mb-0">
@@ -235,92 +153,7 @@
 				Bert de Vries<br />
 			</p>
 
-			<p class="mb-0">
-				<i>On Embedded Normativity - An Active Inference account of agency beyond flesh</i></br>
-				Avel Guénin Carlut, Mahault Albarracin<br />
-			</p>
-
-			<p class="mb-0">
-				<i>Designing explainable artificial intelligence with active inference: A framework for transparent
-					introspection and decision-making</i></br>
-				Mahault Albarracin, Ines Hipolito, Safae Essafi-Tremblay, Jason Fox, Gabriel Rene, Maxwell Ramstead,
-				Karl Friston<br />
-			</p>
-
-			<p class="mb-0">
-				<i>Dynamical Perception-Action Loop Formation with Developmental Embodiment for Hierarchical Active
-					Inference</i></br>
-				Kanako Esaki, Tadayuki Matsumura, Shunsuke Minusa, Yang Shao, Chihiro Yoshimura, Hiroyuki Mizuno<br />
-			</p>
-
-			<p class="mb-0">
-				<i>Integrating cognitive map learning and active inference for planning in ambiguous
-					environments</i></br>
-				Toon Van de Maele, Bart Dhoedt, Tim Verbelen, Giovanni Pezzulo<br />
-			</p>
-
-			<p class="mb-0">
-				<i>Active Inference in Hebbian Learning Networks</i></br>
-				Ali Safa, Tim Verbelen, Lars Keuninckx, Ilja Ocket, André Bourdoux, Francky Catthoor, Georges Gielen,
-				Gert Cauwenberghs<br />
-			</p>
-
-			<p class="mb-0">
-				<i>Contextual Qualitative Deterministic Models for Self-Learning Embodied Agents</i></br>
-				Jan Lemeire, Nick Wouters, Marco Van Cleemput<br />
-			</p>
-
-			<p class="mb-0">
-				<i>Learning One Abstract Bit at a Time Through Self-Invented Experiments Encoded as Neural
-					Networks</i></br>
-				Vincent Herrmann, Louis Kirsch, Jürgen Schmidhuber<br />
-			</p>
-
-			<p class="mb-0">
-				<i>Towards Metacognitive Robot Decision Making for Tool Selection</i></br>
-				Ajith Anil Meera, Pablo Lanillos<br />
-			</p>
-
-			<p class="mb-0">
-				<i>Probabilistic Majorization of Partially Observable Markov Decision Processes</i></br>
-				Tom Lefebvre<br />
-			</p>
-
-			<p class="mb-0">
-				<i>Efficient motor learning through action-perception cycles in deep kinematic inference</i></br>
-				Matteo Priorelli, Ivilin Peev Stoianov<br />
-			</p>
-
-			<p class="mb-0">
-				<i>A Model of Agential Learning Using Active Inference</i></br>
-				Riddhi Jain Pitliya, Robin A. Murphy<br />
-			</p>
-
-			<p class="mb-0">
-				<i>Understanding Tool Discovery and Tool Innovation Using Active Inference</i></br>
-				Poppy Collis, Paul Kinghorn, Christopher Buckley<br />
-			</p>
-
-			<p class="mb-0">
-				<i>An analytical model of active inference in the Iterated Prisoner's Dilemma</i></br>
-				Daphne Demekas, Conor Heins, Brennan Klein<br />
-			</p>
-
-			<p class="mb-0">
-				<i>Exploring Action-Centric Representations Through the Lens of Rate-Distortion Theory</i></br>
-				Miguel De Llanza Varona, Christopher Buckley, Beren Millidge<br />
-			</p>
-
-			<p class="mb-0">
-				<i>Towards Understanding Persons and their Personalities with Cybernetic Big 5 Theory and the Free
-					Energy Principle and Active Inference (FEP-AI) Framework</i></br>
-				Adam Safron, Zahra Sheikhbahaee<br />
-			</p>
-
-			<p class="mb-0">
-				<i>Relative representations for cognitive graphs</i></br>
-				Alex B Kiefer, Christopher Buckley<br />
-			</p>
+			
 
 			<h5>Accepted posters</h5>
 
@@ -328,79 +161,7 @@
 				<i>An Actively Inferential Neuro-AI Interface</i></br>
 				Charles Wan<br />
 			</p>
-
-			<p class="mb-0">
-				<i>Generalized Notation Notation for Active Inference Models</i></br>
-				Jakub Smekal, Daniel Friedman<br />
-			</p>
-
-			<p class="mb-0">
-				<i>An active inference perspective for the amygdala complex</i></br>
-				Ronald Sladky, Dominic Kargl, Wulf Haubensak, Claus Lamm<br />
-			</p>
-
-			<p class="mb-0">
-				<i>Real-World Robot Control Based on Contrastive Active Inference with Learning from
-					Demonstration</i></br>
-				Kentaro Fujii, Takuya Isomura, Shingo Murata<br />
-			</p>
-
-			<p class="mb-0">
-				<i>Inventory Decision by Active Inference</i></br>
-				Wanshan Zhu<br />
-			</p>
-
-			<p class="mb-0">
-				<i>Predictive Coding Account of Bipolar Disorder</i></br>
-				Theodoros Sechopoulos<br />
-			</p>
-
-			<p class="mb-0">
-				<i>Objects as perceptually grounded neurosymbols for reasoning and behavior</i></br>
-				Ruben S. van Bergen, Pablo Lanillos<br />
-			</p>
-
-			<p class="mb-0">
-				<i>Active Inference in Human-Computer Interaction</i></br>
-				Roderick Murray-Smith, Sebastian Stein, John H Williamson<br />
-			</p>
-
-			<p class="mb-0">
-				<i>Hierarchical Active Inference for Exploration and Navigation in Structured Maze Environments</i></br>
-				Daria de Tinguy, Toon Van de Maele, Tim Verbelen, Bart Dhoedt<br />
-			</p>
-
-			<p class="mb-0">
-				<i>A model of hippocampal-prefrontal interactions to solve spatial memory-guided tasks</i></br>
-				Toon Van de Maele, Bart Dhoedt, Tim Verbelen, Giovanni Pezzulo<br />
-			</p>
-
-			<p class="mb-0">
-				<i>Spike coding active inference</i></br>
-				André Rodrigues Urbano, Ajith Anil Meera, Sander Wessel Keemink, Pablo Lanillos<br />
-			</p>
-
-			<p class="mb-0">
-				<i>A Neural Network Implementation for Free Energy Principle</i></br>
-				Jingwei Liu<br />
-			</p>
-
-			<p class="mb-0">
-				<i>Synthesising Idiographic Computational Models of Human Biometric Data With Virtually Embodied
-					Active-Inference Agents and Their Affordances When Embedded in a Computational Ecology</i></br>
-				Casper Hesp, Richard K Ridderinkhof<br />
-			</p>
-
-			<p class="mb-0">
-				<i>An Active Inference Approach to Attachment Theory</i></br>
-				Erica Santaguida, Giuseppe Pagnoni<br />
-			</p>
-
-			<p class="mb-0">
-				<i>Intra-Active Inference I: Fundamentals</i></br>
-				Ali Rahmjoo, Mahault Albarracin<br />
-			</p>
-
+			-->
 		</div>
 		</div>
 	</section>
@@ -416,14 +177,14 @@
 			</p>
 			<ul>
 				<li>Active inference, theory and applications</li>
-				<li>Cognitive robotics</li>
+                                <li>Predictive coding</li>
+				<li>Hierarchical generative models</li>
 				<li>Computational neuroscience</li>
-				<li>(Deep) generative models</li>
+				<li>Cognitive robotics</li>
 				<li>Intelligent systems</li>
 				<li>Neuroeconomics</li>
 				<li>Cognitive science</li>
 				<li>Decision making</li>
-				<li>Predictive coding</li>
 				<li>...</li>
 			</ul>
 			<p class="mb-0"></p>
@@ -434,11 +195,12 @@
 		<div class="container">
 			<h5>Important dates</h5>
 			<p class="mb-0">
-				Submission Deadline: <del>June 2, 2023</del> <ins>June 9, 2023</ins> <br />
-				Acceptance Notification: July 14, 2023 <br />
-				Camera Ready Submission Deadline: September 1, 2023 <br />
-				Registration deadline: September 5, 2023 <br />
-				Workshop Date: September 13-15, 2023 
+				Abstract Deadline: May 24th, 2024 <br />
+				Submission Deadline: May 31st, 2024 <br />
+				Acceptance Notification: July 14, 2024 <br />
+				Camera Ready Submission Deadline: September 2, 2024 <br />
+				Registration deadline: September 2, 2024 <br />
+				Workshop Date: September 9-11, 2024
 			</p>
 		</div>
 	</section>
@@ -453,7 +215,7 @@
 				originality and relevance to the workshop, and should have an abstract of maximum 250 words.
 				Contributions should
 				be in PDF format and submitted via OpenReview (<a
-					href="https://openreview.net/group?id=IWAI/2023/Workshop" target="_blank">click here</a>).
+					href="https://openreview.net/group?id=IWAI/2024/Workshop" target="_blank">click here</a>).
 			</p>
 			<p class="mb-0">
 				All submitted papers will undergo a rigorous <b>double-blind</b> peer review process, and be selected
@@ -471,7 +233,7 @@
 					target="_blank">click here for details</a>). These can cover the material of a journal paper
 				published by the author in the past 12 months, or can be an abstract of late breaking results.
 				Contributions should be in PDF format and submitted via OpenReview (<a
-					href="https://openreview.net/group?id=IWAI/2023/Workshop" target="_blank">click here</a>). Extended
+					href="https://openreview.net/group?id=IWAI/2024/Workshop" target="_blank">click here</a>). Extended
 				abstracts will not be published in the proceedings, but can be accepted as presentations or as posters
 				to the workshop.
 			</p>
@@ -481,20 +243,10 @@
 	<section class="middlesection text-left bg-light" id="registration">
 		<div class="container">
 			<h4>Registration</h4>
-			<p class="mb-0">
-				<!--Please register <a href="https://eu.eventscloud.com/ereg/index.php?eventid=200259879&"
-					target="_blank">here</a>. The registration will close at September 5th.-->
-                                <b> Registration is closed. </b> <br />
- 
-				The registration fee includes coffee breaks, lunch (Wed,Thu,Fri), and dinner (Wed,Thu). <br />
-			</p>
-			<ul>
-				<li>Student: 100 EUR (excl. VAT)</li>
-				<li>Regular: 500 EUR (excl. VAT)</li>
-			</ul>
 
-			<br />
-			By registering you agree to the <a href="docs/TermsConditions.pdf">Terms and Conditions</a>.
+			<p class="mb-0">
+				Registration details will be announced later.
+			</p>
 		</div>
 		<br />
 	</section>
@@ -504,21 +256,21 @@
 		<div class="container">
 			<h4>Venue</h4>
 			<p class="mb-0">
-				The workshop will take place <a href="docs/IWAI_2023_venue.pdf" target="_blank">at the St Peter's Abbey</a>, in Ghent, Belgium.
+				The workshop will take place at Corpus Christi College, in Oxford, UK.
 			</p>
 		</div>
 
 		<div class="container">
 			<div class="row">
 				<div class="col-4">
-					<img src="img/ghent-sint-pietersabdij_tuin.jpg" class="img-fluid">
+					<img src="img/oxford-corpus-christi.jpg" class="img-fluid">
 				</div>
 				<div class="col-4">
-					<img src="img/ghent-sint-pietersabdij.jpg" class="img-fluid">
+					<img src="img/oxford-auditorium.jpg" class="img-fluid">
 				</div>
 				<div class="col-4">
 					<iframe
-						src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d20068.132144372586!2d3.7138855072792776!3d51.043549824878376!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6a023c4d7bdac0a8!2sSint-Pietersabdij!5e0!3m2!1sen!2sbe!4v1672927645438!5m2!1sen!2sbe"
+						src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4940.019759902585!2d-1.2538714!3d51.7511429!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876c6ad93660f67%3A0x8b0a7d5877ec4e66!2sCorpus%20Christi%20College!5e0!3m2!1snl!2sbe!4v1704443184988!5m2!1snl!2sbe"
 						width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
 						referrerpolicy="no-referrer-when-downgrade"></iframe>
 				</div>
@@ -527,29 +279,60 @@
 		</div>
 	</section>
 
+
 	<section class="subsection text-left bg-light">
 		<div class="container">
 			<h5>Travel information</h5>
 			<p class="mb-0">
-				At the main station of Ghent, Gent-Sint-Pieters, you will find railway links to all the cities in
-				Belgium. This city also has a direct line to Brussels International Airport. Upon arrival, please go to
-				floor -1 of the Brussels International Airport. From there you can take either a direct train to
-				Ghent-Sint-Pieters (one every hour) or you can change trains in Brussels to get to Ghent. For further
-				information about the beautiful city of Ghent, see <a href="https://visit.gent.be/en"
-					target="_blank">visitgent</a>.
+				Most travel tickets to Oxford, whether it be for buses or trains, can be conveniently purchased online
+				through <a href="https://www.thetrainline.com/" target="_blank">Trainline</a>.
+				Note that there are ticket options for flexible travelling.
+				If you're arriving in London by train at London St Pancras International Station, you can transfer to
+				Oxford by train with typically
+				one or two changes along the way. Tickets for these journeys can be booked via <a
+					href="https://www.thetrainline.com/" target="_blank">Trainline</a>. Direct trains to Oxford depart
+				from London
+				Paddington and Marylebone Stations, both of which are easily accessible using the London Underground
+				(the metro/subway system) where you
+				can simply use contactless bank cards as tickets.
+			</p>
+			<p>
+				For a direct bus service from London to Oxford, you can opt for the <a
+					href="https://www.oxfordtube.com/" target="_blank">Oxford Tube</a>, which runs 24/7.
+				Despite the name, it is a coach service, not to be confused with London's subway system, which is also
+				known as the Tube.
+				The journey by bus usually takes around 2 hours and departs from various locations, including Victoria
+				Coach Station.
+			</p>
+			<p>
+				If you're flying into London via Heathrow Airport, a direct bus to Oxford is a swift option, taking
+				approximately 1.5 hours with services
+				like <a href="https://www.theairlineoxford.co.uk/" target="_blank">The Airline</a>. If you prefer to
+				travel by train, which may take longer,
+				you'll need to journey into central London first before catching a train to Oxford. <a
+					href="https://www.thetrainline.com/" target="_blank">Trainline</a> can provide you with the
+				necessary travel routes and ticketing information.
+				You can also reach Oxford by bus from other London airports or from cities across the UK via services
+				such as <a href="https://www.nationalexpress.com/en" target="_blank">National Express</a>.
+			</p>
+			<p>
+				For travelling within Oxford, since it's a beautiful and small city that is cycling-friendly, you may
+				walk, rent a bicycle, or use an e-scooter.
 			</p>
 		</div>
 
 		<div class="container">
-			<h5>Visa for Belgium</h5>
+			<h5>Visa for United Kingdom</h5>
 			<p class="mb-0">
-				Please check the Belgian Embassy or Consulate in your own country to check if you need a visa to come to
-				Belgium. Contact us in time if you need an invitation letter.
+				Please check the UK Embassy or Consulate in your own country to check if you need a visa to come to
+				the United Kingdom. Contact us in time if you need an invitation letter.
 			</p>
 		</div>
 	</section>
 
 
+
+	<!--
 	<section class="middlesection text-left bg-light" id="sponsors">
 		<div class="container">
 			<h4>Sponsors</h4>
@@ -564,33 +347,18 @@
 					<a href="https://www.verses.ai/" target="_blank"><img src="img/VERSES.png"
 							class="img-fluid vertical-center"></a>
 				</div>
-				<div class="col-2">
-					<a href="https://www.ugent.be/en" target="_blank"><img src="img/ugent.png"
-							class="img-fluid vertical-center"></a>
-				</div>
-				<div class="col-2">
-					<a href="https://idlab.technology/" target="_blank"><img src="img/idlab.png"
-							class="img-fluid vertical-center"></a>
-				</div>
-				<div class="col-2">
-					<a href="https://www.imec-int.com/en" target="_blank"><img src="img/imec.png"
-							class="img-fluid vertical-center"></a>
-				</div>
-				<div class="col-2">
-					<a href="https://www.flandersairesearch.be/en" target="_blank"><img src="img/aiflanders.png"
-							class="img-fluid"></a>
-				</div>
 			</div>
 			<br />
 		</div>
 	</section>
+	-->
 
 	<section class="middlesection text-left bg-light">
 		<div class="container">
 			<h4>Organization</h4>
 
 			<p class="mb-0">
-				IWAI 2023 is made possible thanks to the following people.
+				IWAI 2024 is made possible thanks to the following people.
 			</p>
 		</div>
 	</section>
@@ -604,11 +372,11 @@
 			</p>
 
 			<p class="mb-0">
-				&nbsp;&nbsp; <b>Local Organisation Chairs:</b> Bart Dhoedt, Toon Van de Maele
+				&nbsp;&nbsp; <b>Local Organization Chair:</b> Riddhi Jain Pitliya
 			</p>
 
 			<p class="mb-0">
-				&nbsp;&nbsp; <b>Technical Program Chairs:</b> Daniela Cialfi, Martijn Wisse
+				&nbsp;&nbsp; <b>Technical Program Chairs:</b> Martijn Wisse, Ivilin Peev Stoianov
 			</p>
 
 			<p class="mb-0">
@@ -616,14 +384,16 @@
 			</p>
 
 
-			<h5>Organisation committee</h5>
+			<h5>Organization committee</h5>
 			<p class="mb-0">
 				Christopher Buckley, University of Sussex, United Kingdom <br />
 				Daniela Cialfi, Institute of Complex Systems (CNR); La Sapienza University of Rome, Italy <br />
 				Pablo Lanillos, Donders Institute for Brain, Cognition and Behaviour, Netherlands <br />
+				Riddhi Jain Pitliya, Oxford University, United Kingdom <br />
 				Maxwell Ramstead, VERSES, USA; and University College London, United Kingdom <br />
 				Noor Sajid, University College London, United Kingdom <br />
 				Hideaki Shimazaki, Kyoto University, Japan <br />
+				Ivilin Peev Stoianov, Institute of Cognitive Sciences and Technologies (ISTC), National Research Council (CNR), Italy <br />
 				Tim Verbelen, VERSES, USA <br />
 				Martijn Wisse, Delft University of Technology, Netherlands
 			</p>
@@ -671,6 +441,7 @@
 				<a href="2020.html">2020 - Ghent (virtual)</a><br />
 				<a href="2021.html">2021 - Bilbao (virtual)</a><br />
 				<a href="2022.html">2022 - Grenoble</a><br />
+				<a href="2023.html">2023 - Ghent</a><br />
 			</p>
 		</div>
 	</section>
@@ -681,8 +452,6 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 h-100 text-center text-lg-left my-auto">
-
-					<p class="text-muted small mb-4 mb-lg-0">Banner picture is &copy; Cedric De Boom, 2016.</p>
 				</div>
 			</div>
 		</div>
