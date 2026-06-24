@@ -164,3 +164,11 @@ footer.footer {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
+
+th {
+  padding: 10px 20px;
+}
+
+td {
+  padding: 10px 20px;
+}
