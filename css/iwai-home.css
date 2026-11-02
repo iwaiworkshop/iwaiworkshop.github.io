@@ -125,14 +125,22 @@ a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
   background: var(--ink);
   color: #fff;
 }
-.kyoto-img { position: absolute; top: -16%; bottom: -16%; left: 0; right: 0; background: url("../img/kyoto-masthead.jpg") center 60% / cover no-repeat; }
+/* The photo cut into depth layers. At rest they line up into the full picture. */
+.kyoto-img { position: absolute; top: -16%; bottom: -16%; left: -28px; right: -28px; }
+.kyoto-img i { position: absolute; inset: 0; background: center 60% / cover no-repeat; will-change: transform; }
+.kyoto-img .sky { background-image: url("../img/kyoto/sky.webp"); }
+.kyoto-img .far { background-image: url("../img/kyoto/far-mountains.webp"); }
+.kyoto-img .near { background-image: url("../img/kyoto/near-mountains.webp"); }
+.kyoto-img .city { background-image: url("../img/kyoto/city.webp"); }
+.kyoto-img .pagoda { background-image: url("../img/kyoto/pagoda.webp"); }
+.kyoto-img .forest { background-image: url("../img/kyoto/forest.webp"); }
 .kyoto::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(15, 15, 16, .88) 0%, rgba(15, 15, 16, .55) 42%, rgba(15, 15, 16, 0) 72%); }
 .kyoto .wrap { position: relative; z-index: 1; width: 100%; padding-top: 72px; padding-bottom: 72px; }
 .kyoto .eyebrow { color: var(--gold-light); }
 .kyoto h2 { margin: 18px 0 16px; font-size: clamp(2.2rem, 5vw, 4.2rem); font-weight: 900; line-height: 1.05; letter-spacing: -.02em; }
 .kyoto p:last-child { font-size: clamp(1.05rem, 1.7vw, 1.3rem); font-weight: 300; line-height: 1.45; }
 @media (max-width: 640px) {
-  .kyoto-img { background-position: 70% center; }
+  .kyoto-img i { background-position: 90% center; }
   .kyoto::after { background: linear-gradient(180deg, rgba(15, 15, 16, .78), rgba(15, 15, 16, .45)); }
 }
 

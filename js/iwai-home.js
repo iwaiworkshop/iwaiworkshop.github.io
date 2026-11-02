@@ -42,7 +42,47 @@
     revealer.observe(el);
   });
 
-  /* ---------- Scroll: progress line, hero drift, Kyoto parallax ---------- */
+  /* ---------- Kyoto photo: each depth layer moves at its own speed ---------- */
+  var scene = { p: 0, tp: 0, h: 0, mx: 0, my: 0, tmx: 0, tmy: 0, visible: false, running: false, first: true };
+  var layers = Array.prototype.map.call(kyotoImg.querySelectorAll('i'), function (el) {
+    return { el: el, y: parseFloat(el.getAttribute('data-y')), x: parseFloat(el.getAttribute('data-x')) };
+  });
+
+  function sceneFrame() {
+    if (!scene.visible) { scene.running = false; return; }
+    /* Jump to the right position the first time, then glide */
+    scene.p = scene.first ? scene.tp : scene.p + (scene.tp - scene.p) * 0.12;
+    scene.first = false;
+    scene.mx += (scene.tmx - scene.mx) * 0.06;
+    scene.my += (scene.tmy - scene.my) * 0.06;
+    layers.forEach(function (l) {
+      var x = -scene.mx * l.x;
+      var y = scene.p * scene.h * l.y - scene.my * l.x * 0.5;
+      l.el.style.transform = 'translate3d(' + x.toFixed(2) + 'px,' + y.toFixed(2) + 'px,0)';
+    });
+    kyotoWrap.style.transform = 'translate3d(0,' + (scene.p * 26).toFixed(1) + 'px,0)';
+    requestAnimationFrame(sceneFrame);
+  }
+
+  new IntersectionObserver(function (entries) {
+    scene.visible = entries[0].isIntersecting;
+    if (scene.visible && !scene.running) {
+      scene.running = true;
+      requestAnimationFrame(sceneFrame);
+    }
+  }, { rootMargin: '80px 0px' }).observe(kyoto);
+
+  kyoto.addEventListener('mousemove', function (ev) {
+    var rect = kyoto.getBoundingClientRect();
+    scene.tmx = (ev.clientX - rect.left) / rect.width * 2 - 1;
+    scene.tmy = (ev.clientY - rect.top) / rect.height * 2 - 1;
+  });
+  kyoto.addEventListener('mouseleave', function () {
+    scene.tmx = 0;
+    scene.tmy = 0;
+  });
+
+  /* ---------- Scroll: progress line, hero drift, Kyoto depth ---------- */
   var ticking = false;
   function onScroll() {
     ticking = false;
@@ -59,12 +99,9 @@
     }
 
     var rect = kyoto.getBoundingClientRect();
-    if (rect.bottom > 0 && rect.top < window.innerHeight) {
-      var mid = rect.top + rect.height / 2 - window.innerHeight / 2;
-      var p = Math.max(-1, Math.min(1, mid / (window.innerHeight / 2 + rect.height / 2)));
-      kyotoImg.style.transform = 'translate3d(0,' + (p * rect.height * -0.14).toFixed(1) + 'px,0)';
-      kyotoWrap.style.transform = 'translate3d(0,' + (p * 26).toFixed(1) + 'px,0)';
-    }
+    var mid = rect.top + rect.height / 2 - window.innerHeight / 2;
+    scene.tp = Math.max(-1, Math.min(1, mid / (window.innerHeight / 2 + rect.height / 2)));
+    scene.h = rect.height;
   }
   function requestScroll() {
     if (!ticking) { ticking = true; requestAnimationFrame(onScroll); }
