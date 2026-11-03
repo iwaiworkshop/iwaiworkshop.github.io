@@ -66,7 +66,7 @@ a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
 .hero .wrap { position: relative; z-index: 1; padding-top: 118px; padding-bottom: 72px; }
 .hero .eyebrow { color: var(--gold); }
 .hero h1 {
-  max-width: 13em;
+  max-width: 15em; /*Ivo: from 13 to 15 to fit Conference */
   margin: 26px 0 30px;
   font-size: clamp(2.6rem, 6.3vw, 5.4rem);
   font-weight: 300;
