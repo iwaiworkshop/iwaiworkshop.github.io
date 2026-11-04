@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Photographs from IWAI 2026, Madrid</title>
+<meta name="description" content="Photographs by Heins Kim from IWAI 2026, the 7th International Workshop on Active Inference, Madrid, 14-16 October 2026. Free to share with credit.">
+<meta property="og:title" content="Photographs from IWAI 2026, Madrid">
+<meta property="og:description" content="Photographs by Heins Kim from the 7th International Workshop on Active Inference.">
+<meta property="og:image" content="https://iwaiworkshop.github.io/img/gallery2026/hero.jpg">
+<meta property="og:url" content="https://iwaiworkshop.github.io/gallery.html">
+<link rel="icon" type="image/x-icon" href="/img/favicon.png">
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet" type="text/css">
+<link href="css/iwai-home.css" rel="stylesheet">
+<link href="css/iwai-gallery.css" rel="stylesheet">
+</head>
+<body class="gallery">
+
+<div class="bar">
+  <div class="wrap">
+    <a href="index.html"><img src="img/IWAI_logo_small.png" alt="IWAI home"></a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="2026.html">IWAI 2026</a>
+      <a href="#using">Using these photos</a>
+    </nav>
+  </div>
+</div>
+
+<header class="g-hero" style="background-image:url('img/gallery2026/hero.jpg')">
+  <div class="wrap">
+    <p class="eyebrow">14&ndash;16 October 2026 &middot; Madrid</p>
+    <h1>Photographs from <strong>IWAI 2026</strong></h1>
+    <p>Spanish National Research Council (CSIC). Photographs by Heins Kim.</p>
+  </div>
+</header>
+
+<div class="days">
+  <div class="wrap">
+    <nav id="dayNav" aria-label="Days"></nav>
+    <span id="count"></span>
+  </div>
+</div>
+
+<main id="main" class="wrap"></main>
+
+<section class="uses" id="using">
+  <div class="wrap">
+    <p class="eyebrow">Using these photos</p>
+    <h2>Share them, and credit the photographer</h2>
+    <div class="terms">
+      <div>
+        <b>Licence</b>
+        <p>Official photos are licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>. You can share and adapt them with the credit line shown under each photo.</p>
+      </div>
+      <div>
+        <b>Sharing</b>
+        <p>Tag the <a href="https://www.linkedin.com/company/int-conf-active-inference" target="_blank" rel="noopener">IWAI LinkedIn page</a> and use #IWAIConference and #IWAI2026Madrid. Each photo has a caption ready to copy.</p>
+      </div>
+      <div>
+        <b>Press and removal</b>
+        <p>For full-resolution files, or to have a photo of you removed, email <a href="mailto:IWAIAdvancement@gmail.com">IWAIAdvancement@gmail.com</a>.</p>
+      </div>
+    </div>
+    <div class="sponsors">
+      <p>IWAI 2026 was supported by</p>
+      <div>
+        <a href="https://waymo.com/" target="_blank" rel="noopener"><img src="img/WAYMO.png" alt="Waymo"></a>
+        <a href="https://motor-ai.com/" target="_blank" rel="noopener"><img src="img/MotorAI.png" alt="Motor AI"></a>
+        <a href="https://pal-robotics.com/" target="_blank" rel="noopener"><img src="img/PAL.png" alt="PAL Robotics"></a>
+        <a href="https://www.csic.es/es" target="_blank" rel="noopener"><img src="img/CSIC.png" alt="CSIC"></a>
+        <a href="https://www.metatool-project.eu/" target="_blank" rel="noopener"><img src="img/METATOOL.png" alt="METATOOL"></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="follow">
+  <div class="wrap">
+    <div>
+      <h2>Follow IWAI on LinkedIn</h2>
+      <p>Get the call for papers, speaker announcements and next year's dates first.</p>
+    </div>
+    <a class="btn dark" href="https://www.linkedin.com/company/int-conf-active-inference" target="_blank" rel="noopener">Follow on LinkedIn</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <span>International Workshop on Active Inference</span>
+    <span><a href="index.html">iwaiworkshop.github.io</a></span>
+  </div>
+</footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="lb-close" id="lbClose">Close</button>
+  <div class="lb-stage">
+    <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous photo">&#8249;</button>
+    <img id="lbImg" alt="">
+    <button class="lb-nav lb-next" id="lbNext" aria-label="Next photo">&#8250;</button>
+  </div>
+  <div class="lb-info">
+    <p><b id="lbCap"></b><span id="lbCredit"></span></p>
+    <div class="lb-acts">
+      <span id="lbPos" style="color:#8f8d85"></span>
+      <button id="lbCopy">Copy caption</button>
+      <a id="lbDownload" download>Download</a>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast">Caption copied</div>
+
+<script>
+/* ============================================================
+   TO ADD PHOTOS
+   Put a resized copy in img/gallery2026/official/ and a small
+   copy in its thumbs/ folder, then add a line below. w and h
+   are the photo's size in pixels. A photographer other than
+   Heins Kim gets credit: "Their Name" on the line.
+   ============================================================ */
+
+const DEFAULT_CREDIT = "Heins Kim";
+const DAY_DATES = { 1: "14 October", 2: "15 October", 3: "16 October" };
+const SITE_LINK = "iwaiworkshop.github.io/gallery.html";
+const LINKEDIN = "linkedin.com/company/int-conf-active-inference";
+
+const PHOTOS = [
+  { file: "iwai2026-day1_opening_001.jpg", day: 1, session: "Opening", w: 1280, h: 960 },
+  { file: "iwai2026-day1_opening_002.jpg", day: 1, session: "Opening", w: 1600, h: 1034 },
+  { file: "iwai2026-day1_opening_003.jpg", day: 1, session: "Opening", w: 1600, h: 1034 },
+  { file: "iwai2026-day1_opening_004.jpg", day: 1, session: "Opening", w: 1600, h: 1034 },
+  { file: "iwai2026-day1_opening_005.jpg", day: 1, session: "Opening", w: 1600, h: 1034 },
+  { file: "iwai2026-day1_opening_006.jpg", day: 1, session: "Opening", w: 1600, h: 1034 },
+  { file: "iwai2026-day1_opening_007.jpg", day: 1, session: "Opening", w: 1600, h: 900 },
+  { file: "iwai2026-day1_opening_008.jpg", day: 1, session: "Opening", w: 1600, h: 900 },
+  { file: "iwai2026-day1_opening_009.jpg", day: 1, session: "Opening", w: 1600, h: 900 },
+  { file: "iwai2026-day1_keynote-rao_001.jpg", day: 1, session: "Keynote: Rajesh Rao", w: 1600, h: 1200 },
+  { file: "iwai2026-day1_keynote-rao_002.jpg", day: 1, session: "Keynote: Rajesh Rao", w: 1280, h: 960 },
+  { file: "iwai2026-day1_keynote-rao_003.jpg", day: 1, session: "Keynote: Rajesh Rao", w: 1067, h: 1600 },
+  { file: "iwai2026-day1_keynote-rao_004.jpg", day: 1, session: "Keynote: Rajesh Rao", w: 1067, h: 1600 },
+  { file: "iwai2026-day1_keynote-rao_005.jpg", day: 1, session: "Keynote: Rajesh Rao", w: 1600, h: 1066 },
+  { file: "iwai2026-day1_keynote-rao_006.jpg", day: 1, session: "Keynote: Rajesh Rao", w: 1600, h: 1066 },
+  { file: "iwai2026-day1_keynote-rao_007.jpg", day: 1, session: "Keynote: Rajesh Rao", w: 1600, h: 1034 },
+  { file: "iwai2026-day1_keynote-rao_008.jpg", day: 1, session: "Keynote: Rajesh Rao", w: 1600, h: 1034 },
+  { file: "iwai2026-day1_sponsor-waymo_001.jpg", day: 1, session: "Sponsor: Waymo", w: 1067, h: 1600 },
+  { file: "iwai2026-day1_sponsor-waymo_002.jpg", day: 1, session: "Sponsor: Waymo", w: 1600, h: 1326 },
+  { file: "iwai2026-day1_sponsor-waymo_003.jpg", day: 1, session: "Sponsor: Waymo", w: 1600, h: 1278 },
+  { file: "iwai2026-day1_fireside-action_001.jpg", day: 1, session: "Fireside: Action", w: 1600, h: 962 },
+  { file: "iwai2026-day1_fireside-action_002.jpg", day: 1, session: "Fireside: Action", w: 1600, h: 1077 },
+  { file: "iwai2026-day1_fireside-action_003.jpg", day: 1, session: "Fireside: Action", w: 1600, h: 1162 },
+  { file: "iwai2026-day1_fireside-action_004.jpg", day: 1, session: "Fireside: Action", w: 1600, h: 1248 },
+  { file: "iwai2026-day1_fireside-action_005.jpg", day: 1, session: "Fireside: Action", w: 1600, h: 1066 },
+  { file: "iwai2026-day1_fireside-action_006.jpg", day: 1, session: "Fireside: Action", w: 1600, h: 1014 },
+  { file: "iwai2026-day1_fireside-action_007.jpg", day: 1, session: "Fireside: Action", w: 1600, h: 1038 },
+  { file: "iwai2026-day1_fireside-action_008.jpg", day: 1, session: "Fireside: Action", w: 1600, h: 1068 },
+  { file: "iwai2026-day1_fireside-action_009.jpg", day: 1, session: "Fireside: Action", w: 1600, h: 1084 },
+  { file: "iwai2026-day1_fireside-action_010.jpg", day: 1, session: "Fireside: Action", w: 1600, h: 1066 },
+  { file: "iwai2026-day1_fireside-action_014.jpg", day: 1, session: "Fireside: Action", w: 1600, h: 1260 },
+  { file: "iwai2026-day1_fireside-action_017.jpg", day: 1, session: "Fireside: Action", w: 1600, h: 869 },
+  { file: "iwai2026-day1_spotlights_001.jpg", day: 1, session: "Spotlights", w: 1280, h: 720 },
+  { file: "iwai2026-day1_spotlights_002.jpg", day: 1, session: "Spotlights", w: 1280, h: 720 },
+  { file: "iwai2026-day1_spotlights_003.jpg", day: 1, session: "Spotlights", w: 1600, h: 900 },
+  { file: "iwai2026-day1_spotlights_004.jpg", day: 1, session: "Spotlights", w: 1600, h: 900 },
+  { file: "iwai2026-day1_spotlights_005.jpg", day: 1, session: "Spotlights", w: 1600, h: 900 },
+  { file: "iwai2026-day1_spotlights_006.jpg", day: 1, session: "Spotlights", w: 1600, h: 900 },
+  { file: "iwai2026-day1_spotlights_007.jpg", day: 1, session: "Spotlights", w: 1280, h: 960 },
+  { file: "iwai2026-day1_spotlights_008.jpg", day: 1, session: "Spotlights", w: 1280, h: 960 },
+  { file: "iwai2026-day1_spotlights_009.jpg", day: 1, session: "Spotlights", w: 1600, h: 1200 },
+  { file: "iwai2026-day1_spotlights_010.jpg", day: 1, session: "Spotlights", w: 1600, h: 1065 },
+  { file: "iwai2026-day1_spotlights_011.jpg", day: 1, session: "Spotlights", w: 1600, h: 1192 },
+  { file: "iwai2026-day1_spotlights_012.jpg", day: 1, session: "Spotlights", w: 1600, h: 1066 },
+  { file: "iwai2026-day1_spotlights_013.jpg", day: 1, session: "Spotlights", w: 1600, h: 1100 },
+  { file: "iwai2026-day1_spotlights_014.jpg", day: 1, session: "Spotlights", w: 1600, h: 1020 },
+  { file: "iwai2026-day1_spotlights_015.jpg", day: 1, session: "Spotlights", w: 1600, h: 961 },
+  { file: "iwai2026-day1_spotlights_016.jpg", day: 1, session: "Spotlights", w: 1600, h: 1078 },
+  { file: "iwai2026-day1_spotlights_017.jpg", day: 1, session: "Spotlights", w: 1600, h: 1223 },
+  { file: "iwai2026-day1_spotlights_018.jpg", day: 1, session: "Spotlights", w: 1600, h: 966 },
+  { file: "iwai2026-day1_spotlights_019.jpg", day: 1, session: "Spotlights", w: 1600, h: 1313 },
+  { file: "iwai2026-day1_spotlights_020.jpg", day: 1, session: "Spotlights", w: 1600, h: 914 },
+  { file: "iwai2026-day1_spotlights_021.jpg", day: 1, session: "Spotlights", w: 1600, h: 1125 },
+  { file: "iwai2026-day1_spotlights_022.jpg", day: 1, session: "Spotlights", w: 1180, h: 1600 },
+  { file: "iwai2026-day1_spotlights_023.jpg", day: 1, session: "Spotlights", w: 1600, h: 1584 },
+  { file: "iwai2026-day1_spotlights_024.jpg", day: 1, session: "Spotlights", w: 1600, h: 1327 },
+  { file: "iwai2026-day1_spotlights_025.jpg", day: 1, session: "Spotlights", w: 1600, h: 1125 },
+  { file: "iwai2026-day1_spotlights_026.jpg", day: 1, session: "Spotlights", w: 1600, h: 900 },
+  { file: "iwai2026-day1_spotlights_027.jpg", day: 1, session: "Spotlights", w: 1600, h: 900 },
+  { file: "iwai2026-day1_social_001.jpg", day: 1, session: "Social", w: 1280, h: 720 },
+  { file: "iwai2026-day1_social_005.jpg", day: 1, session: "Social", w: 960, h: 1280 },
+  { file: "iwai2026-day1_social_008.jpg", day: 1, session: "Social", w: 960, h: 1280 },
+  { file: "iwai2026-day1_social_009.jpg", day: 1, session: "Social", w: 1600, h: 1200 },
+  { file: "iwai2026-day1_social_011.jpg", day: 1, session: "Social", w: 1600, h: 1200 },
+  { file: "iwai2026-day1_social_012.jpg", day: 1, session: "Social", w: 1600, h: 1200 },
+  { file: "iwai2026-day1_social_014.jpg", day: 1, session: "Social", w: 1388, h: 1600 },
+  { file: "iwai2026-day1_social_018.jpg", day: 1, session: "Social", w: 1600, h: 1066 },
+  { file: "iwai2026-day1_social_019.jpg", day: 1, session: "Social", w: 1600, h: 1090 },
+  { file: "iwai2026-day1_social_020.jpg", day: 1, session: "Social", w: 1009, h: 1600 },
+  { file: "iwai2026-day1_social_021.jpg", day: 1, session: "Social", w: 1600, h: 1066 },
+  { file: "iwai2026-day1_social_024.jpg", day: 1, session: "Social", w: 1194, h: 1600 },
+  { file: "iwai2026-day1_social_025.jpg", day: 1, session: "Social", w: 1600, h: 1142 },
+  { file: "iwai2026-day1_social_036.jpg", day: 1, session: "Social", w: 955, h: 1600 },
+  { file: "iwai2026-day2_keynote-pezzulo_001.jpg", day: 2, session: "Keynote: Giovanni Pezzulo", w: 1067, h: 1600 },
+  { file: "iwai2026-day2_keynote-pezzulo_003.jpg", day: 2, session: "Keynote: Giovanni Pezzulo", w: 1600, h: 1066 },
+  { file: "iwai2026-day2_keynote-pezzulo_004.jpg", day: 2, session: "Keynote: Giovanni Pezzulo", w: 1600, h: 1066 },
+  { file: "iwai2026-day2_keynote-pezzulo_007.jpg", day: 2, session: "Keynote: Giovanni Pezzulo", w: 1600, h: 1066 },
+  { file: "iwai2026-day2_keynote-pezzulo_009.jpg", day: 2, session: "Keynote: Giovanni Pezzulo", w: 939, h: 1600 },
+  { file: "iwai2026-day2_keynote-taniguchi_001.jpg", day: 2, session: "Keynote: Tadahiro Taniguchi", w: 1600, h: 1034 },
+  { file: "iwai2026-day2_keynote-taniguchi_002.jpg", day: 2, session: "Keynote: Tadahiro Taniguchi", w: 1600, h: 1034 },
+  { file: "iwai2026-day2_keynote-taniguchi_003.jpg", day: 2, session: "Keynote: Tadahiro Taniguchi", w: 1600, h: 1034 },
+  { file: "iwai2026-day2_keynote-taniguchi_004.jpg", day: 2, session: "Keynote: Tadahiro Taniguchi", w: 1600, h: 1034 },
+  { file: "iwai2026-day2_sponsor-motorai_002.jpg", day: 2, session: "Sponsor: Motor AI", w: 1008, h: 1600 },
+  { file: "iwai2026-day2_sponsor-motorai_004.jpg", day: 2, session: "Sponsor: Motor AI", w: 1174, h: 1600 },
+  { file: "iwai2026-day2_sponsor-motorai_005.jpg", day: 2, session: "Sponsor: Motor AI", w: 1600, h: 1059 },
+  { file: "iwai2026-day2_fireside-ghostinthemachine_003.jpg", day: 2, session: "Fireside: Ghost in the Machine", w: 1600, h: 1066 },
+  { file: "iwai2026-day2_fireside-ghostinthemachine_005.jpg", day: 2, session: "Fireside: Ghost in the Machine", w: 1600, h: 1054 },
+  { file: "iwai2026-day2_fireside-ghostinthemachine_007.jpg", day: 2, session: "Fireside: Ghost in the Machine", w: 1600, h: 1066 },
+  { file: "iwai2026-day2_fireside-ghostinthemachine_009.jpg", day: 2, session: "Fireside: Ghost in the Machine", w: 1600, h: 1098 },
+  { file: "iwai2026-day2_fireside-ghostinthemachine_015.jpg", day: 2, session: "Fireside: Ghost in the Machine", w: 1600, h: 1066 },
+  { file: "iwai2026-day2_fireside-ghostinthemachine_016.jpg", day: 2, session: "Fireside: Ghost in the Machine", w: 1600, h: 738 },
+  { file: "iwai2026-day2_fireside-ghostinthemachine_018.jpg", day: 2, session: "Fireside: Ghost in the Machine", w: 1600, h: 1106 },
+  { file: "iwai2026-day2_fireside-ghostinthemachine_019.jpg", day: 2, session: "Fireside: Ghost in the Machine", w: 1600, h: 1066 },
+  { file: "iwai2026-day2_fireside-ghostinthemachine_021.jpg", day: 2, session: "Fireside: Ghost in the Machine", w: 1600, h: 1066 },
+  { file: "iwai2026-day2_fireside-ghostinthemachine_022.jpg", day: 2, session: "Fireside: Ghost in the Machine", w: 1600, h: 1066 },
+  { file: "iwai2026-day2_fireside-ghostinthemachine_023.jpg", day: 2, session: "Fireside: Ghost in the Machine", w: 1600, h: 1066 },
+  { file: "iwai2026-day2_fireside-ghostinthemachine_025.jpg", day: 2, session: "Fireside: Ghost in the Machine", w: 1600, h: 927 },
+  { file: "iwai2026-day2_fireside-ghostinthemachine_026.jpg", day: 2, session: "Fireside: Ghost in the Machine", w: 1600, h: 1066 },
+  { file: "iwai2026-day2_fireside-ghostinthemachine_027.jpg", day: 2, session: "Fireside: Ghost in the Machine", w: 1600, h: 1066 },
+  { file: "iwai2026-day2_fireside-ghostinthemachine_030.jpg", day: 2, session: "Fireside: Ghost in the Machine", w: 1600, h: 1066 },
+  { file: "iwai2026-day2_spotlights_001.jpg", day: 2, session: "Spotlights", w: 1280, h: 960 },
+  { file: "iwai2026-day2_spotlights_002.jpg", day: 2, session: "Spotlights", w: 960, h: 1280 },
+  { file: "iwai2026-day2_spotlights_003.jpg", day: 2, session: "Spotlights", w: 1280, h: 960 },
+  { file: "iwai2026-day2_spotlights_004.jpg", day: 2, session: "Spotlights", w: 1280, h: 960 },
+  { file: "iwai2026-day2_spotlights_005.jpg", day: 2, session: "Spotlights", w: 1280, h: 960 },
+  { file: "iwai2026-day2_spotlights_006.jpg", day: 2, session: "Spotlights", w: 1600, h: 1200 },
+  { file: "iwai2026-day2_spotlights_007.jpg", day: 2, session: "Spotlights", w: 1600, h: 1066 },
+  { file: "iwai2026-day2_spotlights_008.jpg", day: 2, session: "Spotlights", w: 1600, h: 1097 },
+  { file: "iwai2026-day2_spotlights_009.jpg", day: 2, session: "Spotlights", w: 1600, h: 987 },
+  { file: "iwai2026-day2_spotlights_010.jpg", day: 2, session: "Spotlights", w: 1600, h: 1066 },
+  { file: "iwai2026-day2_spotlights_011.jpg", day: 2, session: "Spotlights", w: 1600, h: 1066 },
+  { file: "iwai2026-day2_spotlights_012.jpg", day: 2, session: "Spotlights", w: 1600, h: 993 },
+  { file: "iwai2026-day2_spotlights_013.jpg", day: 2, session: "Spotlights", w: 1600, h: 1255 },
+  { file: "iwai2026-day2_spotlights_014.jpg", day: 2, session: "Spotlights", w: 1600, h: 1066 },
+  { file: "iwai2026-day2_spotlights_015.jpg", day: 2, session: "Spotlights", w: 1600, h: 1066 },
+  { file: "iwai2026-day2_spotlights_016.jpg", day: 2, session: "Spotlights", w: 1600, h: 1066 },
+  { file: "iwai2026-day2_spotlights_017.jpg", day: 2, session: "Spotlights", w: 1600, h: 1281 },
+  { file: "iwai2026-day2_spotlights_018.jpg", day: 2, session: "Spotlights", w: 1067, h: 1600 },
+  { file: "iwai2026-day2_spotlights_019.jpg", day: 2, session: "Spotlights", w: 1600, h: 1066 },
+  { file: "iwai2026-day2_spotlights_020.jpg", day: 2, session: "Spotlights", w: 1600, h: 1115 },
+  { file: "iwai2026-day2_spotlights_021.jpg", day: 2, session: "Spotlights", w: 1600, h: 1066 },
+  { file: "iwai2026-day2_spotlights_022.jpg", day: 2, session: "Spotlights", w: 1600, h: 1066 },
+  { file: "iwai2026-day2_spotlights_023.jpg", day: 2, session: "Spotlights", w: 1600, h: 1066 },
+  { file: "iwai2026-day2_spotlights_024.jpg", day: 2, session: "Spotlights", w: 1600, h: 1066 },
+  { file: "iwai2026-day2_spotlights_025.jpg", day: 2, session: "Spotlights", w: 1600, h: 1066 },
+  { file: "iwai2026-day2_spotlights_026.jpg", day: 2, session: "Spotlights", w: 1600, h: 1236 },
+  { file: "iwai2026-day2_spotlights_027.jpg", day: 2, session: "Spotlights", w: 1067, h: 1600 },
+  { file: "iwai2026-day2_spotlights_028.jpg", day: 2, session: "Spotlights", w: 1600, h: 1260 },
+  { file: "iwai2026-day2_spotlights_029.jpg", day: 2, session: "Spotlights", w: 1600, h: 1385 },
+  { file: "iwai2026-day2_spotlights_030.jpg", day: 2, session: "Spotlights", w: 1277, h: 1600 },
+  { file: "iwai2026-day2_spotlights_031.jpg", day: 2, session: "Spotlights", w: 1108, h: 1600 },
+  { file: "iwai2026-day2_spotlights_032.jpg", day: 2, session: "Spotlights", w: 1600, h: 1066 },
+  { file: "iwai2026-day2_spotlights_033.jpg", day: 2, session: "Spotlights", w: 1600, h: 1106 },
+  { file: "iwai2026-day2_spotlights_034.jpg", day: 2, session: "Spotlights", w: 1600, h: 1288 },
+  { file: "iwai2026-day2_spotlights_035.jpg", day: 2, session: "Spotlights", w: 1600, h: 1131 },
+  { file: "iwai2026-day2_spotlights_036.jpg", day: 2, session: "Spotlights", w: 1600, h: 1118 },
+  { file: "iwai2026-day2_spotlights_037.jpg", day: 2, session: "Spotlights", w: 1600, h: 1141 },
+  { file: "iwai2026-day2_spotlights_038.jpg", day: 2, session: "Spotlights", w: 1600, h: 1066 },
+  { file: "iwai2026-day2_spotlights_039.jpg", day: 2, session: "Spotlights", w: 1600, h: 1066 },
+  { file: "iwai2026-day2_spotlights_040.jpg", day: 2, session: "Spotlights", w: 1600, h: 1174 },
+  { file: "iwai2026-day2_spotlights_041.jpg", day: 2, session: "Spotlights", w: 1600, h: 1114 },
+  { file: "iwai2026-day2_spotlights_042.jpg", day: 2, session: "Spotlights", w: 1600, h: 1100 },
+  { file: "iwai2026-day2_spotlights_043.jpg", day: 2, session: "Spotlights", w: 1600, h: 1254 },
+  { file: "iwai2026-day2_spotlights_044.jpg", day: 2, session: "Spotlights", w: 1600, h: 1066 },
+  { file: "iwai2026-day2_spotlights_045.jpg", day: 2, session: "Spotlights", w: 1600, h: 1066 },
+  { file: "iwai2026-day2_spotlights_046.jpg", day: 2, session: "Spotlights", w: 1600, h: 1066 },
+  { file: "iwai2026-day2_spotlights_047.jpg", day: 2, session: "Spotlights", w: 1600, h: 1066 },
+  { file: "iwai2026-day2_spotlights_048.jpg", day: 2, session: "Spotlights", w: 1600, h: 1066 },
+  { file: "iwai2026-day2_social_002.jpg", day: 2, session: "Social", w: 957, h: 1600 },
+  { file: "iwai2026-day2_social_004.jpg", day: 2, session: "Social", w: 1067, h: 1600 },
+  { file: "iwai2026-day2_social_009.jpg", day: 2, session: "Social", w: 1600, h: 1089 },
+  { file: "iwai2026-day2_social_011.jpg", day: 2, session: "Social", w: 1600, h: 1066 },
+  { file: "iwai2026-day2_social_012.jpg", day: 2, session: "Social", w: 1600, h: 878 },
+  { file: "iwai2026-day2_social_013.jpg", day: 2, session: "Social", w: 1600, h: 1042 },
+  { file: "iwai2026-day2_social_015.jpg", day: 2, session: "Social", w: 1600, h: 984 },
+  { file: "iwai2026-day2_social_017.jpg", day: 2, session: "Social", w: 1600, h: 992 },
+  { file: "iwai2026-day2_social_020.jpg", day: 2, session: "Social", w: 1600, h: 1291 },
+  { file: "iwai2026-day2_social_021.jpg", day: 2, session: "Social", w: 1600, h: 1234 },
+  { file: "iwai2026-day3_keynote-torras_001.jpg", day: 3, session: "Keynote: Carme Torras", w: 834, h: 1600 },
+  { file: "iwai2026-day3_keynote-torras_002.jpg", day: 3, session: "Keynote: Carme Torras", w: 819, h: 1600 },
+  { file: "iwai2026-day3_keynote-torras_003.jpg", day: 3, session: "Keynote: Carme Torras", w: 1130, h: 1600 },
+  { file: "iwai2026-day3_keynote-torras_004.jpg", day: 3, session: "Keynote: Carme Torras", w: 921, h: 1600 },
+  { file: "iwai2026-day3_keynote-torras_005.jpg", day: 3, session: "Keynote: Carme Torras", w: 1600, h: 1066 },
+  { file: "iwai2026-day3_keynote-torras_006.jpg", day: 3, session: "Keynote: Carme Torras", w: 1600, h: 1066 },
+  { file: "iwai2026-day3_keynote-torras_007.jpg", day: 3, session: "Keynote: Carme Torras", w: 1600, h: 1225 },
+  { file: "iwai2026-day3_keynote-torras_008.jpg", day: 3, session: "Keynote: Carme Torras", w: 1070, h: 1600 },
+  { file: "iwai2026-day3_fireside-robotaxis_001.jpg", day: 3, session: "Fireside: Robotaxis", w: 1600, h: 1154 },
+  { file: "iwai2026-day3_fireside-robotaxis_002.jpg", day: 3, session: "Fireside: Robotaxis", w: 1600, h: 1066 },
+  { file: "iwai2026-day3_fireside-robotaxis_003.jpg", day: 3, session: "Fireside: Robotaxis", w: 985, h: 1600 },
+  { file: "iwai2026-day3_fireside-robotaxis_004.jpg", day: 3, session: "Fireside: Robotaxis", w: 976, h: 1600 },
+  { file: "iwai2026-day3_fireside-robotaxis_005.jpg", day: 3, session: "Fireside: Robotaxis", w: 1067, h: 1600 },
+  { file: "iwai2026-day3_fireside-robotaxis_006.jpg", day: 3, session: "Fireside: Robotaxis", w: 1090, h: 1600 },
+  { file: "iwai2026-day3_fireside-robotaxis_007.jpg", day: 3, session: "Fireside: Robotaxis", w: 913, h: 1600 },
+  { file: "iwai2026-day3_fireside-robotaxis_008.jpg", day: 3, session: "Fireside: Robotaxis", w: 1257, h: 1600 },
+  { file: "iwai2026-day3_fireside-robotaxis_009.jpg", day: 3, session: "Fireside: Robotaxis", w: 1600, h: 1029 },
+  { file: "iwai2026-day3_fireside-robotaxis_010.jpg", day: 3, session: "Fireside: Robotaxis", w: 1600, h: 1082 },
+  { file: "iwai2026-day3_fireside-robotaxis_011.jpg", day: 3, session: "Fireside: Robotaxis", w: 1600, h: 1066 },
+  { file: "iwai2026-day3_fireside-robotaxis_012.jpg", day: 3, session: "Fireside: Robotaxis", w: 1600, h: 1066 },
+  { file: "iwai2026-day3_fireside-robotaxis_013.jpg", day: 3, session: "Fireside: Robotaxis", w: 1600, h: 960 },
+  { file: "iwai2026-day3_fireside-robotaxis_014.jpg", day: 3, session: "Fireside: Robotaxis", w: 1600, h: 970 },
+  { file: "iwai2026-day3_fireside-robotaxis_015.jpg", day: 3, session: "Fireside: Robotaxis", w: 1600, h: 1046 },
+  { file: "iwai2026-day3_fireside-robotaxis_016.jpg", day: 3, session: "Fireside: Robotaxis", w: 1600, h: 1066 },
+  { file: "iwai2026-day3_fireside-robotaxis_017.jpg", day: 3, session: "Fireside: Robotaxis", w: 1600, h: 1057 },
+  { file: "iwai2026-day3_fireside-robotaxis_018.jpg", day: 3, session: "Fireside: Robotaxis", w: 1600, h: 1054 },
+  { file: "iwai2026-day3_fireside-robotaxis_019.jpg", day: 3, session: "Fireside: Robotaxis", w: 1600, h: 1089 },
+  { file: "iwai2026-day3_fireside-robotaxis_020.jpg", day: 3, session: "Fireside: Robotaxis", w: 1600, h: 918 },
+  { file: "iwai2026-day3_fireside-robotaxis_021.jpg", day: 3, session: "Fireside: Robotaxis", w: 1600, h: 1072 },
+  { file: "iwai2026-day3_fireside-robotaxis_022.jpg", day: 3, session: "Fireside: Robotaxis", w: 1600, h: 948 },
+  { file: "iwai2026-day3_fireside-robotaxis_023.jpg", day: 3, session: "Fireside: Robotaxis", w: 1600, h: 1066 },
+  { file: "iwai2026-day3_fireside-robotaxis_024.jpg", day: 3, session: "Fireside: Robotaxis", w: 1600, h: 1066 },
+  { file: "iwai2026-day3_fireside-robotaxis_025.jpg", day: 3, session: "Fireside: Robotaxis", w: 1600, h: 1066 },
+  { file: "iwai2026-day3_fireside-robotaxis_026.jpg", day: 3, session: "Fireside: Robotaxis", w: 1600, h: 1066 },
+  { file: "iwai2026-day3_fireside-robotaxis_027.jpg", day: 3, session: "Fireside: Robotaxis", w: 1600, h: 1066 },
+  { file: "iwai2026-day3_fireside-robotaxis_028.jpg", day: 3, session: "Fireside: Robotaxis", w: 1600, h: 1066 },
+  { file: "iwai2026-day3_fireside-robotaxis_029.jpg", day: 3, session: "Fireside: Robotaxis", w: 1600, h: 1066 },
+  { file: "iwai2026-day3_fireside-robotaxis_030.jpg", day: 3, session: "Fireside: Robotaxis", w: 1600, h: 1066 },
+  { file: "iwai2026-day3_fireside-robotaxis_031.jpg", day: 3, session: "Fireside: Robotaxis", w: 1600, h: 1066 },
+  { file: "iwai2026-day3_fireside-robotaxis_032.jpg", day: 3, session: "Fireside: Robotaxis", w: 1600, h: 1066 },
+  { file: "iwai2026-day3_fireside-robotaxis_033.jpg", day: 3, session: "Fireside: Robotaxis", w: 1067, h: 1600 },
+  { file: "iwai2026-day3_fireside-robotaxis_034.jpg", day: 3, session: "Fireside: Robotaxis", w: 1067, h: 1600 },
+  { file: "iwai2026-day3_spotlights_001.jpg", day: 3, session: "Spotlights", w: 1600, h: 1068 },
+  { file: "iwai2026-day3_spotlights_002.jpg", day: 3, session: "Spotlights", w: 1600, h: 1070 },
+  { file: "iwai2026-day3_spotlights_003.jpg", day: 3, session: "Spotlights", w: 1600, h: 1077 },
+  { file: "iwai2026-day3_spotlights_004.jpg", day: 3, session: "Spotlights", w: 1600, h: 1093 },
+  { file: "iwai2026-day3_spotlights_005.jpg", day: 3, session: "Spotlights", w: 1600, h: 1066 },
+  { file: "iwai2026-day3_spotlights_006.jpg", day: 3, session: "Spotlights", w: 1600, h: 1066 },
+  { file: "iwai2026-day3_spotlights_007.jpg", day: 3, session: "Spotlights", w: 1600, h: 1066 },
+  { file: "iwai2026-day3_spotlights_008.jpg", day: 3, session: "Spotlights", w: 1600, h: 1066 },
+  { file: "iwai2026-day3_spotlights_009.jpg", day: 3, session: "Spotlights", w: 1600, h: 1066 },
+  { file: "iwai2026-day3_spotlights_013.jpg", day: 3, session: "Spotlights", w: 1600, h: 1066 },
+  { file: "iwai2026-day3_spotlights_014.jpg", day: 3, session: "Spotlights", w: 1600, h: 1066 },
+  { file: "iwai2026-day3_spotlights_015.jpg", day: 3, session: "Spotlights", w: 1600, h: 1066 },
+  { file: "iwai2026-day3_spotlights_016.jpg", day: 3, session: "Spotlights", w: 1600, h: 1066 },
+  { file: "iwai2026-day3_spotlights_017.jpg", day: 3, session: "Spotlights", w: 1600, h: 1066 },
+  { file: "iwai2026-day3_spotlights_020.jpg", day: 3, session: "Spotlights", w: 1600, h: 1066 },
+  { file: "iwai2026-day3_spotlights_021.jpg", day: 3, session: "Spotlights", w: 1600, h: 1066 },
+  { file: "iwai2026-day3_spotlights_022.jpg", day: 3, session: "Spotlights", w: 1600, h: 1066 },
+  { file: "iwai2026-day3_spotlights_023.jpg", day: 3, session: "Spotlights", w: 1600, h: 1066 },
+  { file: "iwai2026-day3_spotlights_029.jpg", day: 3, session: "Spotlights", w: 1600, h: 1066 },
+  { file: "iwai2026-day3_spotlights_032.jpg", day: 3, session: "Spotlights", w: 1600, h: 1066 },
+  { file: "iwai2026-day3_spotlights_034.jpg", day: 3, session: "Spotlights", w: 1600, h: 1066 },
+  { file: "iwai2026-day3_spotlights_036.jpg", day: 3, session: "Spotlights", w: 1600, h: 1066 },
+  { file: "iwai2026-day3_spotlights_038.jpg", day: 3, session: "Spotlights", w: 1600, h: 1066 },
+  { file: "iwai2026-day3_awards-iwai2027_002.jpg", day: 3, session: "Awards and IWAI 2027", w: 1067, h: 1600 },
+  { file: "iwai2026-day3_awards-iwai2027_003.jpg", day: 3, session: "Awards and IWAI 2027", w: 1600, h: 1066 },
+  { file: "iwai2026-day3_awards-iwai2027_005.jpg", day: 3, session: "Awards and IWAI 2027", w: 1600, h: 1054 },
+  { file: "iwai2026-day3_awards-iwai2027_006.jpg", day: 3, session: "Awards and IWAI 2027", w: 1600, h: 1066 },
+  { file: "iwai2026-day3_awards-iwai2027_009.jpg", day: 3, session: "Awards and IWAI 2027", w: 1600, h: 1350 },
+  { file: "iwai2026-day3_awards-iwai2027_013.jpg", day: 3, session: "Awards and IWAI 2027", w: 1600, h: 1154 },
+  { file: "iwai2026-day3_awards-iwai2027_014.jpg", day: 3, session: "Awards and IWAI 2027", w: 1600, h: 1066 },
+  { file: "iwai2026-day3_awards-iwai2027_018.jpg", day: 3, session: "Awards and IWAI 2027", w: 1600, h: 1098 },
+  { file: "iwai2026-day3_awards-iwai2027_020.jpg", day: 3, session: "Awards and IWAI 2027", w: 1600, h: 1101 },
+  { file: "iwai2026-day3_awards-iwai2027_023.jpg", day: 3, session: "Awards and IWAI 2027", w: 1407, h: 1600 },
+  { file: "iwai2026-day3_awards-iwai2027_027.jpg", day: 3, session: "Awards and IWAI 2027", w: 1600, h: 1066 },
+  { file: "iwai2026-day3_gifts-audience_001.jpg", day: 3, session: "Gifts and audience", w: 1230, h: 1600 },
+  { file: "iwai2026-day3_gifts-audience_002.jpg", day: 3, session: "Gifts and audience", w: 1087, h: 1600 },
+  { file: "iwai2026-day3_gifts-audience_003.jpg", day: 3, session: "Gifts and audience", w: 902, h: 1600 },
+  { file: "iwai2026-day3_gifts-audience_004.jpg", day: 3, session: "Gifts and audience", w: 847, h: 1600 },
+  { file: "iwai2026-day3_gifts-audience_005.jpg", day: 3, session: "Gifts and audience", w: 845, h: 1600 },
+  { file: "iwai2026-day3_gifts-audience_006.jpg", day: 3, session: "Gifts and audience", w: 1067, h: 1600 },
+  { file: "iwai2026-day3_gifts-audience_007.jpg", day: 3, session: "Gifts and audience", w: 1162, h: 1600 },
+  { file: "iwai2026-day3_gifts-audience_008.jpg", day: 3, session: "Gifts and audience", w: 1067, h: 1600 },
+  { file: "iwai2026-day3_gifts-audience_009.jpg", day: 3, session: "Gifts and audience", w: 985, h: 1600 },
+  { file: "iwai2026-day3_gifts-audience_010.jpg", day: 3, session: "Gifts and audience", w: 976, h: 1600 },
+  { file: "iwai2026-day3_gifts-audience_011.jpg", day: 3, session: "Gifts and audience", w: 1067, h: 1600 },
+  { file: "iwai2026-day3_gifts-audience_012.jpg", day: 3, session: "Gifts and audience", w: 1090, h: 1600 },
+  { file: "iwai2026-day3_gifts-audience_013.jpg", day: 3, session: "Gifts and audience", w: 913, h: 1600 },
+  { file: "iwai2026-day3_gifts-audience_014.jpg", day: 3, session: "Gifts and audience", w: 1257, h: 1600 }
+];
+
+/* ======== No edits needed below this line ======== */
+
+const DIR = "img/gallery2026/official/";
+const main = document.getElementById("main");
+const dayNav = document.getElementById("dayNav");
+document.getElementById("count").textContent = PHOTOS.length + " photographs";
+
+const captionOf = p => "Day " + p.day + ", " + p.session;
+const creditOf = p => "Photo: IWAI 2026 / " + (p.credit || DEFAULT_CREDIT);
+
+function shareText(p) {
+  return captionOf(p) + ", at #IWAI2026Madrid, the International Workshop on Active Inference. #IWAIConference #ActiveInference\n" +
+    "Follow IWAI: " + LINKEDIN + "\n" + creditOf(p) + " · " + SITE_LINK;
+}
+
+function el(tag, cls, text) {
+  const n = document.createElement(tag);
+  if (cls) n.className = cls;
+  if (text !== undefined) n.textContent = text;
+  return n;
+}
+
+[...new Set(PHOTOS.map(p => p.day))].forEach(day => {
+  const link = el("a", "", "Day " + day);
+  link.href = "#day" + day;
+  dayNav.appendChild(link);
+
+  const sec = el("section", "day");
+  sec.id = "day" + day;
+  const head = el("div", "day-head");
+  head.append(el("h2", "", "Day " + day), el("span", "", DAY_DATES[day] || ""));
+  sec.appendChild(head);
+
+  const inDay = PHOTOS.filter(p => p.day === day);
+  [...new Set(inDay.map(p => p.session))].forEach(name => {
+    const group = inDay.filter(p => p.session === name);
+    const block = el("div", "session");
+    const h = el("h3", "", name);
+    h.appendChild(el("small", "", String(group.length)));
+    const rows = el("div", "rows");
+    group.forEach(p => {
+      const ratio = p.w / p.h;
+      const b = el("button");
+      b.style.flexGrow = ratio * 100;
+      b.style.flexBasis = "calc(var(--h) * " + ratio.toFixed(3) + ")";
+      b.setAttribute("aria-label", "Open photo: " + captionOf(p));
+      const spacer = el("i");
+      spacer.style.paddingBottom = (100 / ratio).toFixed(2) + "%";
+      const img = el("img");
+      img.src = DIR + "thumbs/" + p.file;
+      img.alt = captionOf(p);
+      img.loading = "lazy";
+      b.append(spacer, img);
+      b.addEventListener("click", () => open(PHOTOS.indexOf(p), b));
+      rows.appendChild(b);
+    });
+    block.append(h, rows);
+    sec.appendChild(block);
+  });
+  main.appendChild(sec);
+});
+
+/* Mark the day being viewed */
+if ("IntersectionObserver" in window) {
+  const links = [...dayNav.querySelectorAll("a")];
+  const seen = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) links.forEach(a => a.classList.toggle("on", a.getAttribute("href") === "#" + e.target.id));
+    });
+  }, { rootMargin: "-30% 0px -65% 0px" });
+  document.querySelectorAll(".day").forEach(s => seen.observe(s));
+}
+
+/* Viewer */
+const lb = document.getElementById("lb");
+const lbImg = document.getElementById("lbImg");
+let current = 0;
+let opener = null;
+
+function show(i) {
+  current = (i + PHOTOS.length) % PHOTOS.length;
+  const p = PHOTOS[current];
+  lbImg.src = DIR + p.file;
+  lbImg.alt = captionOf(p);
+  document.getElementById("lbCap").textContent = captionOf(p);
+  document.getElementById("lbCredit").textContent = creditOf(p) + " · CC BY 4.0";
+  document.getElementById("lbPos").textContent = (current + 1) + " / " + PHOTOS.length;
+  const dl = document.getElementById("lbDownload");
+  dl.href = DIR + p.file;
+  dl.setAttribute("download", p.file);
+  new Image().src = DIR + PHOTOS[(current + 1) % PHOTOS.length].file;
+}
+function open(i, from) {
+  opener = from;
+  show(i);
+  lb.classList.add("open");
+  document.body.style.overflow = "hidden";
+  document.getElementById("lbClose").focus();
+}
+function close() {
+  lb.classList.remove("open");
+  document.body.style.overflow = "";
+  if (opener) opener.focus();
+}
+document.getElementById("lbClose").addEventListener("click", close);
+document.getElementById("lbPrev").addEventListener("click", () => show(current - 1));
+document.getElementById("lbNext").addEventListener("click", () => show(current + 1));
+document.addEventListener("keydown", e => {
+  if (!lb.classList.contains("open")) return;
+  if (e.key === "Escape") close();
+  if (e.key === "ArrowLeft") show(current - 1);
+  if (e.key === "ArrowRight") show(current + 1);
+});
+
+function copied() {
+  const t = document.getElementById("toast");
+  t.classList.add("show");
+  setTimeout(() => t.classList.remove("show"), 2000);
+}
+document.getElementById("lbCopy").addEventListener("click", () => {
+  const text = shareText(PHOTOS[current]);
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text).then(copied, () => fallback(text));
+  } else {
+    fallback(text);
+  }
+});
+function fallback(text) {
+  const ta = document.createElement("textarea");
+  ta.value = text;
+  ta.style.position = "fixed";
+  ta.style.opacity = "0";
+  lb.appendChild(ta);
+  ta.select();
+  try { document.execCommand("copy"); copied(); } catch (e) { /* the caption stays available on the page */ }
+  lb.removeChild(ta);
+}
+</script>
+</body>
+</html>
